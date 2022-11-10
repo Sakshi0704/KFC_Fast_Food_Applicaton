@@ -31,9 +31,6 @@ body{
         position: relative;
         left:20px;      
 }
-#logo{
-   width:10%;
-}
 
 #nevBarContainer{ 
     display: flex;
@@ -42,7 +39,6 @@ body{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: white;
     border:2px solid rgb(211, 209, 209);
-   
 }
 
 #nevBarContainer>div:nth-child(1){
@@ -65,9 +61,8 @@ body{
 }
 
 #nevBarContainer>div:nth-child(1)>h3{
-   margin-left:-50%;
+   margin-left:-30%;
 }
-
 #nevBarContainer>div:nth-child(2)>img{
    width:15%;
 }
@@ -95,7 +90,7 @@ body{
     text-align:center;
     /* width:50%;
     margin:auto; */
-    padding:25px;
+    padding:20px;
     color:white;
     display: flex;
     justify-content: center;

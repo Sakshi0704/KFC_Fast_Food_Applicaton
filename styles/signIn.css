@@ -1,0 +1,51 @@
+body{
+    margin:0px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+div{
+    margin:auto;
+    text-align: center;
+    width:600px;
+    margin-top:25px;
+    padding:80px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+h3{
+    font-weight: bolder;  
+}
+
+div>input{
+    width:600px;
+    border: transparent;
+    border-bottom:2px solid black;
+    padding:15px;
+    box-sizing: border-box;
+   text-align: justify;
+   font-size: larger;
+}
+
+div>button{
+    padding:15px 30px;
+    border:25px;
+    border-radius: 20px 23px;
+}
+
+div>button:nth-child(6){
+    color:white;
+    background-color: rgb(22, 22, 22);
+    margin:25px;
+}
+
+div>button:last-child{
+    width:600px;
+    background-color: white;
+    border:1px solid black;
+    margin:5px;
+}
+
+div>h2{
+    font-size: small;
+    color:rgb(58, 58, 58);
+}
