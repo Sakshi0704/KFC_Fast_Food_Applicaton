@@ -24,8 +24,9 @@ function slideimg(value){
        if(value==arr.length)
           value=0;
     console.log(img1);
-    },2000);
+    },1000);
 }
 
+document.querySelector("")
 
-// 
+
