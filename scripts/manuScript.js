@@ -1,94 +1,13 @@
 
+// linking to cart page
+document.querySelector("#img2NavBar").addEventListener("click",function(){
+     window.location.href="./cart.html";
+ });
 
 
 // Chicken Buckets.......
 
-let chickenArr=[
-    {
- img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-     },
-    {
-    img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-    smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-    },
-    {
- img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
- smallDisc: "Peri Peri 10 Strips with Dynamite",
- price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-     },
-    {
-img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-  },
-   {
-img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
- detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-  },
-  {
- img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
- smallDisc: "Peri Peri 10 Strips with Dynamite",
- price: "639.05",
- detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-  },
-  {
-    img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-    smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-    },
-    {
- img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
- smallDisc: "Peri Peri 10 Strips with Dynamite",
- price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-     },
-    {
-img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-  },
-   {
-img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
- detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-  },
-  {
- img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
- smallDisc: "Peri Peri 10 Strips with Dynamite",
- price: "639.05",
- detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-  },
-  {
-    img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-    smallDisce: "Peri Peri 10 Strips with Dynamite",
-    price: "639.05",
-     detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-      },
-      {
-     img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-     smallDisc: "Peri Peri 10 Strips with Dynamite",
-     price: "639.05",
-     detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-      },
-                                         
-]
-
-localStorage.setItem("chicken",JSON.stringify(chickenArr));
-console.log(chickenArr);
-
-let data1 = JSON.parse(localStorage.getItem("chicken"));
+let data1 = JSON.parse(localStorage.getItem("chicken"))||[];
 
 displayData(data1);
 
@@ -103,7 +22,7 @@ arr.forEach(function(elem,index){
         img.src = elem.img;
 
    let smallDisc = document.createElement("p");
-        smallDisc.innerText = elem.innerText;
+        smallDisc.innerText = elem.smallDisc;
 
    let price = document.createElement("h3");
         price.innerText = elem.price;
@@ -113,6 +32,9 @@ arr.forEach(function(elem,index){
 
    let button = document.createElement("button");
         button.innerText = "Add to Cart";
+          button.addEventListener("click",function(){
+                    addDataCart("cart",elem);
+          })
 
    div.append(img,smallDisc,price,detail,button);
         document.querySelector("#chicken").append(div);
@@ -122,25 +44,8 @@ arr.forEach(function(elem,index){
 
 
 // Exlusive Deal.......
-let ExlusiveArr=[
-    {
- img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-     },
-    {
-    img: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=21.88",
-    smallDisc: "Peri Peri 10 Strips with Dynamite",
-price: "639.05",
-detail : "10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle",
-    },                                   
-]
 
-localStorage.setItem("Exlusive",JSON.stringify(ExlusiveArr));
-console.log(chickenArr);
-
-let data2 = JSON.parse(localStorage.getItem("Exlusive"));
+let data2 = JSON.parse(localStorage.getItem("Exlusive"))||[];
 
 displayData2(data2);
 
@@ -165,10 +70,32 @@ arr.forEach(function(elem,index){
 
    let button = document.createElement("button");
         button.innerText = "Add to Cart";
+        button.addEventListener("click",function(){
+          addDataCart("cart",elem);
+          })
 
    div.append(img,smallDisc,price,detail,button);
         document.querySelector("#exclusive").append(div);
 });
 
 };
+
+function addDataCart(key,value){
+     let cartData = JSON.parse(localStorage.getItem(key))||[];
+      for(let i=0;i<cartData.length;i++){
+        if(cartData[i].id==value.id)
+              {
+               alert("Add already in cart if need to increase please go to the cart and increase the quentity");
+               return;
+               }   
+          };  
+     cartData.push({...value,quantity:1});
+     localStorage.setItem(key,JSON.stringify(cartData));
+     console.log(cartData);
+}
+
+
+
+
+
 

@@ -1,6 +1,10 @@
 body{
    margin:0;
 }
+a{
+   text-decoration: none;
+   color:black;
+}
 
 /* nevBar container ..... */
  #nevBarContainer{ 
@@ -150,6 +154,8 @@ body{
    grid-template-columns: repeat(2,1fr);
    gap:30px;
 }
+
+
 
 
 

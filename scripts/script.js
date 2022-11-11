@@ -27,6 +27,15 @@ function slideimg(value){
     },1000);
 }
 
-document.querySelector("")
+document.querySelector("#img2NavBar").addEventListener("click",function(){
+    window.location.href="./cart.html";
+})
+
+
+// linking to cart page
+document.querySelector("#manu").addEventListener("click",function(){
+    window.location.href="./manu.html";
+});
+
 
 
