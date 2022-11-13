@@ -3,6 +3,10 @@ a{
    color:black;
 }
 
+a:hover{
+   color:rgb(157, 203, 243);
+}
+
 body{
     margin:0;
  }
@@ -156,11 +160,24 @@ body{
 #min{
    display:flex;
    justify-content: space-between;
+   padding:0% 6%;
+   background-color: rgb(216, 215, 215);
 }
+#min>p{
+   color:red;
+}
+#min>button{
+   box-sizing: border-box;
+   border-radius: 25%;
+   border:none;
+   font-weight: bold;
+}
+
 
 #min+div{
    display:flex;
    justify-content: space-between;
+   
 }
 
 #min+div+div{
@@ -175,6 +192,7 @@ body{
 
 #total-checkout{
    display:flex;
+   justify-content: space-between;
    margin:auto;
    margin-top:10%;
    width:90%;
@@ -182,9 +200,11 @@ body{
    border-radius: 23px 25px;
    background-color: rgb(211, 6, 6);
    color:white;
-   font-size:20px;
-   padding:0px 3%;
+   font-size:18px;
+   padding:0px 2%;
 }
+
+
  
 
 

@@ -6,6 +6,9 @@ a{
    text-decoration: none;
    color:black;
 }
+a:hover{
+   color:rgb(197, 194, 194);
+}
 #location{
     height:50px;
     display: flex;

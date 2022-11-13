@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAOGI KHAOJI SIGN IN</title>
+    <link rel="stylesheet" href="./styles/signin.css"/>
+    <style>
+    #resend{
+        border:transparent;
+        text-decoration: underline;
+        background-color: white;
+        font-size: small;
+    }
+    #clickHere{
+        padding:2% 10%;
+        color:black;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    </style>
+</head>
+<body>
+    <div id="form">
+        <h2>Sign In / Sign up</h2>
+        <img id="logo" src="./Aaoji Khaoji.png" alt="logo_img"/>
+        <h3>PLEASE FIND THE OTP</h3>
+        <P>Please enter the verification code we just sent</P>
+        <input id="otp" type="type" placeholder="Enter the OTP*">
+        <p>Your code will expire in <b id="timeset"></b>sec.</p>
+        <button id="resend">Resend the Code</button><br>
+        <button id="clickHere">Submit</button><br>
+    </div>
+</body>
+</html>
+<script>
+    function getOTP(){
+        setTimeout(function(){
+            let otp = Math.floor(Math.random()*10000+1);
+            alert(otp+"  is your Aaoji Khaoji OTP verification code");
+             document.querySelector("#clickHere").addEventListener("click",function(){
+            let num = document.querySelector("#otp").value;
+                if(num == otp)
+                {
+                    alert("Login Successfully");
+                    window.location.href="./index.html";
+                }
+                else{
+                    alert("Please enter the valid otp");
+                    }
+             });
+        },1000);
+     } 
+
+     getOTP();
+    
+ document.querySelector("#resend").addEventListener("click",function(){
+                         getOTP();
+            });
+          
+    
+</script>

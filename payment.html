@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #cont{
+            width:30%;
+            height:auto;
+            margin:auto;
+            padding:20px;
+            background-color: rgb(247, 245, 243);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            
+        }
+        #cont>div{
+            display:flex;
+            justify-content: space-between;
+            margin-top:20px; 
+        }
+
+        #cont>div:first-child{
+            background-color:rgb(192, 6, 37);
+            border:2px solid black;
+            color:white;
+            height:50px;
+            text-align: center;
+            align-items: center;
+        }
+
+        #cont>div:first-child>p{
+            margin: auto;
+            font-size: 25px;
+        }
+
+        input{
+            /* box-sizing: border-box; */
+            height:fit-content;
+            padding:10px 20px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 7px;
+            border: 1px solid black;
+            /* position:relative;
+            left:5%; */
+        }
+
+        select{
+            height:fit-content;
+            padding:10px 16px;
+            font-size: 16px;
+            border-radius: 7px;
+            border: 1px solid black;
+            /* position:relative;
+            left:10%; */
+        }
+
+        #cont>input{
+            margin-left:40%;
+            font-size: large;
+            font-weight: bolder;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border:1px white;
+        }
+        #cont>input:hover{
+            background-color:blanchedalmond;
+        }
+        
+        label{
+            font-size:20px;
+        }
+        #img{
+            width:auto;
+            height:30px;
+            margin-left:5%;
+            border:2px solid gray;
+        }
+        img{
+            height:100%;
+            width:40px;
+        }
+        
+        ::placeholder{
+            color:gray;
+            font-size:20px;
+            text-align: left;
+        }
+
+        #cont>div:nth-child(8){
+            font-size:23px;
+        }
+
+    </style>
+</head>
+<body>
+   <div id="cont">
+        <div><p>PAYMENT PROCESS</p></div>
+        <div id="accept">
+        <label>We Accept</label>
+        <div id="img">
+            <img src="https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_card_visa-64.png"/>
+            <img src="https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_master_card-64.png"/>
+            <img src="https://cdn4.iconfinder.com/data/icons/simple-peyment-methods/512/visa-64.png"/>
+        </div>
+        </div>
+        <div id="cardtype">
+            <label>Card Type</label>
+            <select>
+                <option value="">Select a payment method</option>
+                <option value="DebitCard">Debit card</option>
+                <option value="CreditCard">Credit card</option>
+            </select>
+        </div>
+        <div>
+            <label>Name on Card</label>
+            <input id ="name" type="text" placeholder="Enter Name"/>
+        </div>
+        <div>
+            <label>Card Number</label>
+            <input id="cardNumber" type="text" placeholder="Card Number"/>
+        </div>
+        <div>
+            <label>Expiry</label>
+            <input id="expiry" type="text" placeholder="mm/year"/>
+        </div>
+        <div>
+            <label>Security Code</label>
+            <input id="cvc" type="password" placeholder="CVC"/>
+        </div>
+        <div>
+            <p>Total Price</p>
+            <p id="price"></p>
+        </div>
+       <input id="submit" type="submit"/>
+    </div>
+</body>
+</html>
+<script>
+    let price = JSON.parse(localStorage.getItem("totalPrice"))||0;
+    console.log(price);
+    document.querySelector("#price").innerText ="₹ "+ price;
+
+    
+   // let form = document.querySelector("form");
+    document.querySelector("#submit").addEventListener("click",function(){    
+        // preventdefault(event);
+         let paymentMethod = document.querySelector("select").value;
+         let cardName = document.querySelector("#name").value;
+         let cardNumber = document.querySelector("#cardNumber").value;
+         let expiry = document.querySelector("#expiry").value;
+         let cvc = document.querySelector("#cvc").value; 
+         let price= document.querySelector("#price").innerText;
+
+         let obj ={
+                paymentMethod,
+                cardName,
+                cardNumber,
+                expiry,
+                cvc,
+                price,
+         }
+        console.log(obj);
+        if(obj.paymentMethod===""||cardName===""||obj.cardNumber===""||obj.expiry===""||obj.cvc==="")
+                alert("Error");
+        else if(obj.cardNumber.length!==19)
+                alert("Wrong Credentials in cardNumber");
+        else if(obj.cvc.length!=4)
+                alert("Wrong Credentials in cvc");
+        else
+               window.location.href="./otpforpayment.html";
+  });
+</script>

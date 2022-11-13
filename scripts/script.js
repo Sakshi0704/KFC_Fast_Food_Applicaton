@@ -27,15 +27,27 @@ function slideimg(value){
     },1000);
 }
 
-document.querySelector("#img2NavBar").addEventListener("click",function(){
-    window.location.href="./cart.html";
-})
-
 
 // linking to cart page
+
+document.querySelector("#img2NavBar").addEventListener("click",function(){
+    window.location.href="./cart.html";
+});
 document.querySelector("#manu").addEventListener("click",function(){
     window.location.href="./manu.html";
 });
+
+document.querySelector("#Browser-parents").addEventListener("click",function(){
+    window.location.href="./manu.html";
+});
+
+document.querySelector("#offers>h2").addEventListener("click",function(){
+    window.location.href="./deal.html";
+});
+
+
+
+
 
 
 

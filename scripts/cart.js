@@ -5,6 +5,8 @@ displayData(cartData);
 
 //console.log(cartData);
 
+
+
 function displayData(arr){
 
      document.querySelector("#cont-child1").innerHTML="";
@@ -34,6 +36,8 @@ function displayData(arr){
         remove.innerText = "Remove";
         remove.addEventListener("click",function(){
              deleteData(cartData,index);
+             window.location.reload();
+
         });
     let insideDiv2 = document.createElement("div");
 
@@ -43,9 +47,10 @@ function displayData(arr){
             elem.quantity++;
                    quantity.innerText=elem.quantity;
                     localStorage.setItem("cart",JSON.stringify(cartData));
-                         displayData(cartData);
+                      //   displayData(cartData);
                 let res= ((+elem.quantity)*(+elem.price));
-                price.innerText = (res).toFixed(2);                        
+                price.innerText = (+res); 
+                window.location.reload();                       
           });
 
 
@@ -61,14 +66,15 @@ function displayData(arr){
                elem.quantity--;
                       quantity.innerText=elem.quantity;
                        localStorage.setItem("cart",JSON.stringify(cartData));
-                          displayData(cartData);
+//displayData(cartData);
                           let res= ((+elem.quantity)*(+elem.price));
-                          price.innerText = (res).toFixed(2); 
+                          price.innerText = (+res);
+                          window.location.reload();
              });
              
    let price = document.createElement("h3");
-          price.innerText = (+elem.quantity)*(+elem.price);   
-
+          price.innerText = "₹ "+((+elem.quantity)*(+elem.price)).toFixed(1);   
+           // subtotal = elem.price;
    insideDiv.append(img);
    insideDiv1.append(smallDisc,remove);
    insideDiv2.append(increament,quantity,decreament,price);
@@ -87,15 +93,17 @@ function deleteData(data,i){
 }
 
 
-
 //let subTotal = document.querySelector("#subtotal").innerText;
 
+ let subTotal = cartData.reduce((a,b)=>{
+          return (a + ((+b.quantity)*(+b.price)));
+          },0);
+     document.querySelector("#subtotal").innerText="₹ "+(subTotal).toFixed(1);
 
-//    let subTotal = cartData.reduce((a,b)=>{
-//           return (a + ((+b.quantity)*(+b.price)));
-//           },0);
-//      document.querySelector("#subtotal").innerText="Rs."+ subTotal;
+let totalPrice = (subTotal+95+35).toFixed(1);
+document.querySelector("#total-checkout>p+p").innerText = "₹ "+totalPrice;
+localStorage.setItem("totalPrice",totalPrice);
 
-
-
-
+document.querySelector("#total-checkout").addEventListener("click",function(){
+     window.location.href="./payment.html";
+})
