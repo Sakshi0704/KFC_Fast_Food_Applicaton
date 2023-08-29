@@ -1,8 +1,8 @@
 
 # KFC_Fast_Food_Application
-Welcome to the KFC Fast Food Application! This project is a web-based platform inspired by the KFC website, offering users the convenience of ordering delicious fried chicken and other fast-food items. In this repository, we've developed a responsive and user-friendly website with functionalities such as menu checkout, account creation, cart management, and a secure payment process.</
+Welcome to the KFC Fast Food Application! This project is a web-based platform inspired by the KFC website, offering users the convenience of ordering delicious fried chicken and other fast-food items. In this repository, we've developed a responsive and user-friendly website with functionalities such as menu checkout, account creation, cart management, and a secure payment process.
 
-![Alt text](Alpha_Lyst.png)
+![Alt text](KFC_Application.png)
 
 <h2>Live Demo Link <a target="blank"> https://luminous-moonbeam-8075ce.netlify.app/ </a></h2>
 
@@ -45,6 +45,5 @@ Welcome to the KFC Fast Food Application! This project is a web-based platform i
 <h2>Acknowledgments</h2>
     <p>We extend our gratitude to the mentors and peers who provided guidance and support during the development of this project from Masai.</p> 
     <p>Thank you for visiting the KFC_Fast_Food_Application repository! If you encounter any issues or have suggestions for improvements, feel free to reach out to us through the contact information provided in the repository.</p>
-<p>Bon appétit!</p>
 
 
