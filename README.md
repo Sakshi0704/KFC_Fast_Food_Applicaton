@@ -4,7 +4,7 @@ Welcome to the KFC Fast Food Application! This project is a web-based platform i
 
 ![Alt text](KFC_Application.png)
 
-<h2>Live Demo Link <a target="blank"> https://luminous-moonbeam-8075ce.netlify.app/ </a></h2>
+<h2>Live Demo Link  https://luminous-moonbeam-8075ce.netlify.app/ </h2>
 
 <h2>Features</h2>
     <ul>
