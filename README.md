@@ -28,7 +28,7 @@ Welcome to the KFC Fast Food Application! This project is a web-based platform i
 
 <h2>Installation</h2>
     <ol>
-        <li>Clone the repository: <code>git clone https://github.com/Sakshi0704/KFC_Fast_Food_Applicaton</code></li>
+        <li>Clone the repository: <code>git clone </code> https://github.com/Sakshi0704/KFC_Fast_Food_Applicaton</li>
         <li>Navigate to the project directory: <code>KFC_Application</code></li>
         <li>Open the project in your preferred code editor.</li>
         <li>Start a local development server or open the <code>index.html</code> file in your web browser.</li>
